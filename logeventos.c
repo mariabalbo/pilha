@@ -90,7 +90,7 @@ void print(eventos *evento){
         if(evento->tam>0){
             int dist = (i-(evento->s)+evento->K)%evento->K;
             if(dist<evento->tam){
-                ocupado=-1;
+                ocupado=1;
             }
         }
         if(ocupado){
@@ -136,3 +136,4 @@ int main(){
     }
     return 0;
 }
+
