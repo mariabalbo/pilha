@@ -57,11 +57,11 @@ void increase(eventos *evento, int inc){
     int *novo_dados=(int*)malloc(novo_cap*sizeof(int));
     
     int tam = size(evento);
-    for(int i=0; i < tam; i++){
-        novo_dados[i] = evento->dados[(evento->s + i) % evento->K];
+    for(int i=0; i <evento->K; i++){
+        novo_dados[i] = evento->dados[i];
     }
     
-    for(int i = tam; i < novo_cap; i++){
+    for(int i = evento->K; i < novo_cap; i++){
         novo_dados[i] = -1;
     }
     
@@ -136,4 +136,5 @@ int main(){
     }
     return 0;
 }
+
 
